@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   inputTextActionCreator,
   startButtonActionCreator,
@@ -9,6 +10,7 @@ import { NameSection, Span, Input, ButtonName } from './styled';
 
 function StartBoard(props) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { text } = useSelector(({ inputReducer }) => inputReducer);
 
@@ -17,6 +19,11 @@ function StartBoard(props) {
   };
   const setNamePlayer = () => {
     dispatch(startButtonActionCreator(text));
+    if (text) {
+      navigate('/quiz');
+    } else {
+      alert('Введите пожалуйста имя');
+    }
   };
 
   const buttonText = useSelector((store) => {

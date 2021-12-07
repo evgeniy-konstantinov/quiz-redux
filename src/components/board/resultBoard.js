@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { ShowScore } from './styled';
+import { questions } from '../../data/questions';
 
-function ResultBoard() {
+function ResultBoard(props) {
   return (
     <ShowScore>
-      Ваш счет {score} из {questions.length}
+      Ваш счет из {questions.length}
       <br />
-      <br />И это составляет:{' '}
-      {Math.floor((score / questions.length) * 100) + '%'}
+      <br />И это составляет: {Math.floor(questions.length * 100) + '%'}
     </ShowScore>
   );
 }

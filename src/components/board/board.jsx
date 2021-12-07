@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 import {
   QustionSection,
@@ -13,8 +14,8 @@ import { questions } from '../../data/questions';
 
 function QuizBoard(props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const toNextQuestion = (isCorrect) => {
     if (isCorrect === true) {
@@ -25,7 +26,7 @@ function QuizBoard(props) {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setShowScore(true);
+      navigate('/result');
     }
   };
 
