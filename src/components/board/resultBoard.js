@@ -6,8 +6,9 @@ import { questions } from '../../data/questions';
 function ResultBoard(props) {
   return (
     <ShowScore>
-      Ваш счет из {questions.length}
+      Имя
       <br />
+      <br /> Ваш счет из {questions.length}
       <br />И это составляет: {Math.floor(questions.length * 100) + '%'}
     </ShowScore>
   );

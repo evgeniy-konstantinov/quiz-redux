@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -22,7 +22,7 @@ function StartBoard(props) {
     if (text) {
       navigate('/quiz');
     } else {
-      alert('Введите пожалуйста имя');
+      alert('Введите ваше имя');
     }
   };
 
