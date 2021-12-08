@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { setScoreActionCreator } from '../../store/actionCreators/actionCreators';
 
 import {
   QustionSection,
@@ -16,6 +18,7 @@ function QuizBoard(props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const toNextQuestion = (isCorrect) => {
     if (isCorrect === true) {
@@ -25,9 +28,11 @@ function QuizBoard(props) {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
-    } else {
+    } else if (nextQuestion === questions.length) {
       navigate('/result');
     }
+    dispatch(setScoreActionCreator(score));
+    console.log(score);
   };
 
   return (

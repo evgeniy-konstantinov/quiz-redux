@@ -63,6 +63,7 @@ export const Button = styled.button`
 `;
 
 export const ShowScore = styled.div`
+  margin-top: 20px;
   background-color: #252d4a;
   width: 600px;
   min-height: 200px;
@@ -75,6 +76,7 @@ export const ShowScore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 `;
 
 export const NameSection = styled.div`

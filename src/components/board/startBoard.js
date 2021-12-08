@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -25,11 +25,6 @@ function StartBoard(props) {
       alert('Введите ваше имя');
     }
   };
-
-  const buttonText = useSelector((store) => {
-    const { startButtonReducer } = store;
-    return startButtonReducer.playerName;
-  });
 
   return (
     <NameSection>
