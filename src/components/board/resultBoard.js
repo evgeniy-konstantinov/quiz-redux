@@ -8,6 +8,7 @@ import { questions } from '../../data/questions';
 function ResultBoard(props) {
   const score = useSelector((store) => {
     const { scoreReducer } = store;
+    // console.log(scoreReducer.score);
     return scoreReducer.score;
   });
 
@@ -15,6 +16,8 @@ function ResultBoard(props) {
     const { startButtonReducer } = store;
     return startButtonReducer.playerName;
   });
+
+  let result = score.filter((el) => el === true);
 
   return (
     <>
@@ -42,9 +45,9 @@ function ResultBoard(props) {
       <ShowScore>
         {buttonText}
         <br />
-        <br /> Ваш счет {Number(score)} из {questions.length}
+        <br /> Ваш счет {result.length} из {questions.length}
         <br />И это составляет:{' '}
-        {Math.floor((score / questions.length) * 100) + '%'}
+        {Math.floor((result.length / questions.length) * 100) + '%'}
       </ShowScore>
     </>
   );

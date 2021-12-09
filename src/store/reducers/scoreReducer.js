@@ -1,7 +1,7 @@
 import { SET_SCORE } from '../constants';
 
 const initialState = {
-  score: '',
+  score: [],
 };
 
 export const scoreReducer = (state = initialState, action) => {
@@ -9,7 +9,7 @@ export const scoreReducer = (state = initialState, action) => {
     case SET_SCORE:
       return {
         ...state,
-        score: action.score,
+        score: [...state.score, action.score],
       };
     default:
       return state;

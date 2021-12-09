@@ -16,23 +16,23 @@ import { questions } from '../../data/questions';
 
 function QuizBoard(props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toNextQuestion = (isCorrect) => {
-    if (isCorrect === true) {
-      setScore(score + 1);
+    if (isCorrect) {
+      setScore(true);
+    } else {
+      setScore(false);
     }
-
+    dispatch(setScoreActionCreator(isCorrect));
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else if (nextQuestion === questions.length) {
       navigate('/result');
     }
-    dispatch(setScoreActionCreator(score));
-    console.log(score);
   };
 
   return (
