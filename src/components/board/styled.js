@@ -80,6 +80,7 @@ export const ShowScore = styled.div`
 `;
 
 export const NameSection = styled.div`
+  margin: auto 0;
   background-color: #252d4a;
   width: 600px;
   min-height: 200px;
@@ -117,4 +118,43 @@ export const ButtonName = styled.button`
   :hover {
     background-color: #555e7d;
   }
+`;
+export const Td = styled.td`
+  padding: 7px;
+`;
+
+export const Block = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
+export const BlockDes = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100vh;
+`;
+
+export const BlockResult = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
+
+export const MainResult = styled.div`
+  width: 200px;
+  text-align: center;
+  margin: 50px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+`;
+
+export const Div = styled.div`
+  width: 20%;
+  /* height: 100%; */
+`;
+
+export const P = styled.p`
+  width: 200px;
 `;
